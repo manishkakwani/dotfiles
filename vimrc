@@ -161,3 +161,6 @@ let g:syntastic_check_on_open=1
 let g:turbux_command_rspec  = 'rspec'
 " colorscheme github
 " ???solarized???
+
+" handle ambiguous command with syntastic :Errors
+command E Ex
