@@ -1,3 +1,9 @@
+" case-insensitive searching
+:set ignorecase
+
+" case-sensitive if search contains a capital letter
+:set smartcase
+
 " Leader
 let mapleader = ","
 
