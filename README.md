@@ -1,4 +1,4 @@
 vimrc
 =====
 
-My personal vimrc
+My personal dotfiles
