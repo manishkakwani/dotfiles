@@ -96,6 +96,7 @@ set numberwidth=5
 " will insert tab at beginning of line,
 " will use completion if not at beginning
 set wildmode=list:longest,list:full
+
 set complete=.,w,t
 function! InsertTabWrapper()
     let col = col('.') - 1
@@ -125,7 +126,7 @@ let g:html_indent_tags = 'li\|p'
 au BufRead,BufNewFile *.md set filetype=markdown
 
 " Enable spellchecking for Markdown
-au BufRead,BufNewFile *.md setlocal spell
+" au BufRead,BufNewFile *.md setlocal spell
 
 " Automatically wrap at 80 characters for Markdown
 au BufRead,BufNewFile *.md setlocal textwidth=80
@@ -167,6 +168,26 @@ let g:syntastic_check_on_open=1
 let g:turbux_command_rspec  = 'rspec'
 " colorscheme github
 " ???solarized???
+colorscheme evening
 
 " handle ambiguous command with syntastic :Errors
 command E Ex
+
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+
+" Display all matching files when we tab complete
+" This is commented because of the wildmode command above
+" set wildmenu
+
+nnoremap <leader>t :find 
+
+" run plugins for vim version 8+
+" packloadall
+
+" show count of search results: https://stackoverflow.com/a/60840571/730086
+set shortmess-=S
+
+" enable matchit to have % jump between keywords such as Ruby’s `do` and `end`
+runtime macros/matchit.vim
